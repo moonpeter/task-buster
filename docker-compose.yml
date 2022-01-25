@@ -5,8 +5,10 @@ services:
     build:  ./web
     command: python3 manage.py runserver 0:8000
     ports:
+      # 로컬 포트 : 컨테이너 내부 포트
       - "9999:8000"
     volumes:
+      # 전송하고자 하는 파일 위치 : 컨테이너 안에서 위치시키고자 하는 위치
       - ./web:/usr/src/web
 
     depends_on:
